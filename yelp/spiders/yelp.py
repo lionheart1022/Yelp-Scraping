@@ -32,10 +32,6 @@ class YelpSpider(scrapy.Spider):
                                      dont_filter=True, headers=self.header,
                                      meta={'external_id': url['id']})
 
-        # yield scrapy.Request(url=self.start_urls[0], callback=self.parse_product,
-        #                      dont_filter=True, headers=self.header,
-        #                      meta={'external_id': '1000000000'})
-
     def parse_product(self, response):
         review_list = []
         external_id = response.meta['external_id']
